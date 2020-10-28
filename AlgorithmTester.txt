@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+
+public class AlgorithmTester
+{
+    public static void main (final String [] args)
+    {
+        final ArrayList <Integer> xlist = new ArrayList <Integer>();
+        final ArrayList <Integer> ylist = new ArrayList <Integer>();
+        
+        for(int i = 0; i <100; i++)
+        {
+            xlist.add((int)(Math.random() * 100));
+            ylist.add((int)(Math.random() * 100));
+        }
+        
+         GeneticAlgorithm GA = new GeneticAlgorithm(xlist, ylist);
+       //System.out.println(GA.calculateFitness());
+        
+        ArrayList <Integer> selectedList = new ArrayList <Integer>();
+        for(int i = 0; i <50; i++)
+        {
+           selectedList.add(GA.calculateFitness().get(i));
+        }
+        
+       
+    }
+}

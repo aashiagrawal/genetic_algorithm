@@ -1,0 +1,34 @@
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class GeneticAlgorithm
+{
+  public static ArrayList <Integer> xlist;
+  public static ArrayList <Integer> ylist;
+  
+  public GeneticAlgorithm ( final ArrayList <Integer> x, final ArrayList <Integer> y)
+  {
+      xlist = x;
+      ylist = y;
+  }
+
+  public static ArrayList <Integer> calculateFitness()
+  {
+      int xvalue;
+      int yvalue;
+      int fitnessValue;
+
+      final ArrayList<Integer> fitness = new ArrayList <Integer>();
+      for(int i = 0; i < xlist.size(); i++)
+      {
+          xvalue = xlist.get(i);
+          yvalue = ylist.get(i);
+          fitnessValue = Math.abs((int)Math.pow(xvalue, 2) + xvalue - yvalue);
+          fitness.add(fitnessValue);
+      }
+      Collections.sort(fitness);
+      return (fitness);
+  }
+
+}
